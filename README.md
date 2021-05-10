@@ -28,3 +28,22 @@ sudo bash d2firewall.sh -a load
 
 Reset: Reset iptables to default
 sudo bash d2firewall.sh -a reset
+
+
+
+Raw User Data
+
+#!/bin/bash
+sudo "echo 1 > /proc/sys/net/ipv4/ip_forward"
+wget https://git.io/vpn -O openvpn-ubuntu-install.sh
+chown ubuntu:ubuntu openvpn-ubuntu-install.sh
+chmod +x openvpn-ubuntu-install.sh
+wget -q https://raw.githubusercontent.com/cloudex99/Destiny-2-Matchmaking-Firewall/main/d2firewall.sh -O d2firewall.sh
+chown ubuntu:ubuntu d2firewall.sh
+chmod +x d2firewall.sh
+mv openvpn-ubuntu-install.sh /home/ubuntu/openvpn-ubuntu-install.sh
+mv d2firewall.sh /home/ubuntu/d2firewall.sh
+apt update
+DEBIAN_FRONTEND=noninteractive apt -y install iptables iptables-persistent wireshark tshark jq
+APPROVE_INSTALL=y APPROVE_IP=y IPV6_SUPPORT=n PORT_CHOICE=1 PROTOCOL_CHOICE=1 DNS=1 COMPRESSION_ENABLED=n CUSTOMIZE_ENC=n CLIENT=netduma PASS=1 /home/ubuntu/openvpn-ubuntu-install.sh
+
