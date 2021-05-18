@@ -47,3 +47,5 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt -y install iptables iptables-persistent wireshark tshark jq
 APPROVE_INSTALL=y APPROVE_IP=y IPV6_SUPPORT=n PORT_CHOICE=1 PROTOCOL_CHOICE=1 DNS=1 COMPRESSION_ENABLED=n CUSTOMIZE_ENC=n CLIENT=netduma PASS=1 /home/ubuntu/openvpn-ubuntu-install.sh
 
+open vpn config command
+sudo cat /root/client.ovpn
