@@ -38,7 +38,7 @@ sudo "echo 1 > /proc/sys/net/ipv4/ip_forward"
 wget https://git.io/vpn -O openvpn-ubuntu-install.sh
 chown ubuntu:ubuntu openvpn-ubuntu-install.sh
 chmod +x openvpn-ubuntu-install.sh
-wget -q https://raw.githubusercontent.com/Tornatus/destiny2firewall/main/d2firewall -O ./d2firewall.sh
+wget -q https://raw.githubusercontent.com/Tornatus/destiny2firewall/main/d2firewall.sh -O d2firewall.sh
 chown ubuntu:ubuntu d2firewall.sh
 chmod +x d2firewall.sh
 mv openvpn-ubuntu-install.sh /home/ubuntu/openvpn-ubuntu-install.sh
